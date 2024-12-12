@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', TemplateView.as_view(template_name="home.html"), name='home'),
-    path('send-form-email/', views.SendFormEmail.as_view(), name='send_email'),
+    path('send-form-email/', views.SendEmail.as_view(), name='send_email'),
     
 ]

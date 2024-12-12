@@ -1,15 +1,14 @@
 from django.shortcuts import render
-
 from django.views.generic import View
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.core.mail import send_mail, send_mass_mail
 
-class SendFormEmail(View):
+class SendEmail(View):
 
     def  get(self, request):
 
-        # Get the form data 
+        # Geting  the form data 
         name = request.GET.get('name', None)
         email = request.GET.get('email', None)
         message = request.GET.get('message', None)
@@ -17,7 +16,7 @@ class SendFormEmail(View):
         send_mail(
             'Subject - Django Email Testing', 
             'Hello ' + name + ',\n' + message, 
-            'sender@example.com', # Admin
+            'sender@example.com', 
             [
                 email,
             ]
@@ -37,8 +36,8 @@ class SendFormEmail(View):
         message2 = ('Another Subject', 'Here is another message', 'from@example.com', ['second@test.com'])
         send_mass_mail((message1, message2), fail_silently=False)
 
-        # Redirect to same page after form submit
-        messages.success(request, ('Email sent successfully.'))
+        # Redirecting to same page after the submission of the form 
+        messages.success(request, ('Email is sent successfully to the user .'))
         return redirect('home')
 
 
