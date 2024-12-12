@@ -1,7 +1,5 @@
 # How to Send Email in Django
 
-In this tutorial, you’ll learn how to send email using Django and Python. How to send multiple emails at a time to users. Integrate SendGrid SMTP with Django. How to use Django Email console to print emails in terminals. Display Email success with Django Messages.
-
 ### Setup
 1. Create a folder and put all the files inside it.
 2. Create a virtual environtment - `virtualenv env`
